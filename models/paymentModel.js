@@ -9,6 +9,7 @@ const imageSchema = new mongoose.Schema({
     name: String,
     paymentMethod: String,
     transactionId: String,
+    itemName: String,
     image: Buffer
 }, {timestamps: true});
   

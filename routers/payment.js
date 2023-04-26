@@ -28,6 +28,7 @@ router.post('/', upload, async(req, res) => {
             name: req.body.name,
             paymentMethod: req.body.paymentMethod,
             transactionId: req.body.transactionId,
+            itemName: req.body.itemName,
             image: req.file.buffer
         });
 
