@@ -7,6 +7,8 @@ const mongoose = require('mongoose');
 
 const imageSchema = new mongoose.Schema({
     name: String,
+    paymentMethod: String,
+    transactionId: String,
     image: Buffer
 }, {timestamps: true});
   

@@ -23,11 +23,11 @@ const upload = multer({ storage: storage }).single('image'); // Use .single() in
 
 router.post('/', upload, async(req, res) => {
     try{
-        console.log(req.body);
-        const {name, email, message} = req.body;
 
         const payment = new paymentModel({
             name: req.body.name,
+            paymentMethod: req.body.paymentMethod,
+            transactionId: req.body.transactionId,
             image: req.file.buffer
         });
 
