@@ -48,8 +48,8 @@ app.use('/payments', require('./routers/payment'));
 app.use('*', (req, res) => {
     res.status(200).json({
         success: true,
-        message: "Welcome to Tour & Travels",
-        data: "Welcome to Tour & Travels"
+        message: "Welcome to PRO-TEEN",
+        data: "Welcome to PRO-TEEN"
     });
 });
 
