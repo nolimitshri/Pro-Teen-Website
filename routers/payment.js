@@ -33,7 +33,7 @@ router.post('/', upload, async(req, res) => {
         });
 
         payment.save()
-        .then(() => res.send('Your Payment will be verified !!'))
+        .then(() => res.redirect(`/payments/${payment.id}`))
         .catch(err => {
             console.log(err);
             res.status(500).json({
@@ -58,10 +58,13 @@ router.get('/:id', async(req, res) => {
     .then(image => {
         res.render('image', { 
             name: image.name,
+            paymentMethod: image.paymentMethod,
+            itemName: image.itemName,
+            transactionId: image.transactionId,
             image: image.image.toString('base64') // Convert the image buffer to base64 for sending over EJS
         });
     })
     .catch(err => console.log(err));
-})
+});
 
 module.exports = router;
