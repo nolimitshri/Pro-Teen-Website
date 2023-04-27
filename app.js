@@ -14,13 +14,13 @@ app.use(logger("dev"));
 app.use(cors());
 
 // Set view engine as EJS
-// const viewsPath = path.join(__dirname, "./views")
-// app.set('views', viewsPath);
+const viewsPath = path.join(__dirname, "./views")
+app.set('views', viewsPath);
 app.set('view engine', 'ejs');
 
 // Require static assets from public folder
-// app.use(express.static(path.join(__dirname, './public')));
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, './public')));
+// app.use(express.static("public"));
 
 // JSON and BodyParser
 app.use(express.urlencoded({extended: true}));
